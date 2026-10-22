@@ -11,10 +11,15 @@
     --muted: #5b6371;
     --line: #d7dbe0;
     --paper: #ffffff;
-    --accent: #1b4f5e;
-    --accent-dark: #143c48;
-    --danger: #9a2f22;
-    --focus: rgba(47, 127, 150, .35);
+    /* Green = go. Used by every action button, focus ring and active toggle. */
+    --accent: #177b3d;
+    --accent-dark: #10612f;
+    --accent-soft: #eaf5ee;
+    /* Red = destructive. Used only by Remove. */
+    --danger: #b3261e;
+    --danger-dark: #8c1d17;
+    --danger-soft: #fdf1f0;
+    --focus: rgba(23, 123, 61, .35);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -223,16 +228,17 @@
     padding: 0 8px;
     margin-right: -8px;
     font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--muted);
+    font-weight: 700;
+    color: var(--danger);
     background: none;
     border: 0;
     text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .remove:hover {
-    color: var(--danger);
-    background: none;
+    color: var(--danger-dark);
+    background: var(--danger-soft);
     border-color: transparent;
   }
 
@@ -240,16 +246,16 @@
     width: 100%;
     min-height: 46px;
     margin-top: 22px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--accent);
     background: none;
-    border: 1px dashed var(--line);
+    border: 1px dashed var(--accent);
   }
 
   .secondary:hover {
     color: var(--accent-dark);
-    background: #f4f6f7;
-    border-color: var(--accent);
+    background: var(--accent-soft);
+    border-color: var(--accent-dark);
   }
 
   .secondary:disabled {
@@ -274,7 +280,7 @@
     min-height: 50px;
     padding: 13px 20px;
     font: inherit;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     background: var(--accent);
     border: 1px solid var(--accent);
